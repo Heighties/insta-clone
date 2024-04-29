@@ -11,29 +11,38 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const AuthForm = () => {
+  // Déclaration de l'état pour gérer le mode de connexion (connexion ou inscription)
   const [isLogin, setIsLogin] = useState(true);
 
+  // Utilisation du hook useNavigate pour la navigation
   const navigate = useNavigate();
 
+  // Déclaration de l'état pour les champs de formulaire (email, mot de passe, confirmation de mot de passe)
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
 
+  // Fonction pour gérer l'authentification (connexion ou inscription)
   const handleAuth = () => {
+    // Vérification si tous les champs sont remplis
     if (!inputs.email || !inputs.password) {
       alert("Please fill all the fields");
       return;
     }
+    // Redirection vers la page d'accueil
     navigate("/");
   };
 
   return (
     <>
+      {/* Formulaire d'authentification */}
       <Box border={"1px solid gray"} borderRadius={4} padding={5}>
         <VStack spacing={4}>
+          {/* Logo Instagram */}
           <Image src="/logo.png" h={24} cursor={"pointer"} alt="Instagram" />
+          {/* Champ de saisie pour l'email */}
           <Input
             placeholder="Email"
             fontSize={14}
@@ -41,6 +50,7 @@ export const AuthForm = () => {
             value={inputs.email}
             onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
           />
+          {/* Champ de saisie pour le mot de passe */}
           <Input
             placeholder="Password"
             fontSize={14}
@@ -49,6 +59,7 @@ export const AuthForm = () => {
             onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
           />
 
+          {/* Champ de saisie pour la confirmation de mot de passe (visible seulement lors de l'inscription) */}
           {!isLogin ? (
             <Input
               placeholder="Confirm Password"
@@ -60,6 +71,7 @@ export const AuthForm = () => {
               type="password"
             />
           ) : null}
+          {/* Bouton pour la connexion ou l'inscription */}
           <Button
             w={"full"}
             colorScheme="blue"
@@ -70,7 +82,7 @@ export const AuthForm = () => {
             {isLogin ? "Log in" : "Sign Up"}
           </Button>
 
-          {/* -------OR------ */}
+          {/* Séparateur "OR" */}
           <Flex
             alignItems={"center"}
             justifyContent={"center"}
@@ -85,7 +97,7 @@ export const AuthForm = () => {
             <Box flex={2} h={"1px"} bg={"gray.400"} />
           </Flex>
 
-          {/* Sign Up with Google */}
+          {/* Connexion avec Google */}
           <Flex
             alignItems={"center"}
             justifyContent={"center"}
@@ -99,7 +111,7 @@ export const AuthForm = () => {
         </VStack>
       </Box>
 
-      {/* Log in or Sign up */}
+      {/* Lien pour changer entre connexion et inscription */}
       <Box border={"1px solid gray"} borderRadius={4} padding={5}>
         <Flex alignItems={"center"} justifyContent={"center"}>
           <Box mx={2} fontSize={14}>
