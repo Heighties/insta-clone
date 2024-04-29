@@ -4,7 +4,7 @@ const PostHeader = () => {
   return (
     <Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
         <Flex alignItems={"center"} gap={2}>
-            <Avatar src="img1.png"/>
+            <Avatar src="img1.png" alt="user profile pic"/>
         </Flex>
         <Box>Pouet</Box>
     </Flex>
