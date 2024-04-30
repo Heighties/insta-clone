@@ -7,7 +7,7 @@ const FeedPost = () => {
   return (
     <>
         <PostHeader />
-        <Box>
+        <Box my={2}>
             <Image src='littlesongbird.png' alt='user profile pic'/>
         </Box>
         <PostFooter />    

@@ -18,7 +18,7 @@ const PostFooter = () => {
 
 
   return (
-    <>
+    <Box mb={10}>
       <Flex alignItems={"center"} gap={4} w={"full"} pt={0} mb={2} mt={"4"}>
         <Box onClick={handleLike} cursor={"pointer"} fontSize={18}>
           {!liked ? (<NotificationsLogo />) : (<UnlikeLogo />)}
@@ -41,13 +41,13 @@ const PostFooter = () => {
       </Text>
       <Flex alignItems={"center"} gap={2} justifyContent={"space-between"} w={"full"}>
         <InputGroup>
-          <Input variant={"flushed"} fontSize={14} placeContent={"Add a comment..."}/>
+          <Input variant={"flushed"} fontSize={14} placeholder={"Add a comment..."}/>
           <InputRightElement>
             <Button fontSize={14} color={"blue.500"} fontWeight={600} cursor={"pointer"} _hover={{color:"white"}} bg={"transparent"}>Post</Button>
           </InputRightElement>
         </InputGroup>
       </Flex>
-    </>
+    </Box>
   )
 }
 
