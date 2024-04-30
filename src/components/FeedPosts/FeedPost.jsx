@@ -7,7 +7,7 @@ const FeedPost = () => {
   return (
     <>
         <PostHeader />
-        <Box my={2}>
+        <Box my={2} overflow={"hidden"} borderRadius={4}>
             <Image src='littlesongbird.png' alt='user profile pic'/>
         </Box>
         <PostFooter />    
